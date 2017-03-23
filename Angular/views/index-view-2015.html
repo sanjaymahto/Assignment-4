@@ -1,0 +1,32 @@
+ <h1 id="matches"></h1>
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <br/>
+        <h1 style="color:white; text-align: center;">: Match details :</h1>
+        <br/>
+        <h2 style="text-align: center; font-family: tahoma;"><a href="#allMatches2015" class="btn btn-primary btn-xl page-scroll">English premier league 2015/16</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#allMatches2016" class="btn btn-primary btn-xl page-scroll">English premier league 2016/17</a></h2>
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            <p style="color:white;text-align:center;">{{myGame2015.matches2015.name}}</p>
+            <hr/>
+            <!-- Team Details-->
+            <p style="color:white;text-align:center;">Fill all the search tab to view a single match</p>
+            <p style="color:white;text-align:center;"><input style="color:black;text-align:center;" type="text" placeholder="Match Day" ng-model="Name"></p>
+            <table class="table table-condensed table-bordered table-striped" ng-repeat="match in myGame2015.matches2015.rounds | filter:{name:Name}">
+                <th colspan="7" style="text-align:center;">{{match.name}}</th>
+                </hr>
+                <p style="color:black;text-align:center;"><input style="color:black;text-align:center;" type="text" placeholder="Date of Match" ng-model="Date">&nbsp;<input style="color:black;text-align:center;" type="text" placeholder="Team Name or Code" ng-model="teamName"></p>
+                <br/>
+                <tr ng-repeat="innermatch in match.matches | filter:{date:Date} | filter:teamName ">
+                    <td data-title="'Date'">{{innermatch.date}}</td>
+                    <td data-title="'Team 1 Name'"> {{innermatch.team1.name}}</td>
+                    <td data-title="'Team 1 Code'"> {{innermatch.team1.code}}</td>
+                    <td data-title="'Team 1 Score'">{{innermatch.score1}}</td>
+                    <td data-title="'Team 2 Name'"> {{innermatch.team2.name}}</td>
+                    <td data-title="'Team 2 Code'"> {{innermatch.team2.code}}</td>
+                    <td data-title="'Team 2 Score'"> {{innermatch.score2}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>

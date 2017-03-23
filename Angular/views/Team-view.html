@@ -1,0 +1,30 @@
+<h1 id="viewTeam"></h1>
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <br/>
+        <h1 style="color:white; text-align: center;">: View Team :</h1>
+        <br/>
+        <h2 style="text-align: center; font-family: tahoma;"><a href="#Matches2015" class="btn btn-primary btn-xl page-scroll">English premier league 2015/16</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#Matches2016" class="btn btn-primary btn-xl page-scroll">English premier league 2016/17</a></h2>
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            <p style="color:white;text-align:center;">{{myGameTeamView2015.matches2015.name}}</p>
+            <hr/>
+            <!-- Team Details-->
+            <p style="color:white;text-align:center;">Fill the search tab to view Team Details:</p>
+            </hr>
+            <form ng-submit="submit()">
+                <p style="color:black;text-align:center;"><input style="color:#EE4B29; background-color:#201C1B;text-align:center;" type="text" ng-model="text" name="text"/><hr/><input style=" margin-left:220px; margin-right:220px;text-align:center;" class="btn btn-primary btn-xl" type="submit" id="submit" value="Submit" /></p>
+            </form>
+    <div>
+        <h2 style="color:#EE4B29;text-align:center;">: Team Statistics :</h2>
+        <h3 style="color:#EE4B29; text-align:center;">{{error}}</h3>
+        <h3 style="color:#6B625B;">Name of the team:<span style="color:#EE4B29;">&nbsp;{{text}}</span></h3>
+        <h3 style="color:#6B625B;">Team Code: <span style="color:#EE4B29;">&nbsp;{{codename}}</span></h3>
+        <h3 style="color:#6B625B;">Total Matches Played:<span style="color:#EE4B29;">&nbsp;{{count}}</span></h3>
+        <h3 style="color:#6B625B;">Total Matches Won:<span style="color:#EE4B29;">&nbsp;{{matchwon}}</span></h3>
+        <h3 style="color:#6B625B;">Total Matches Lost:<span style="color:#EE4B29;">&nbsp;{{matchlost}}</span></h3>
+        <h3 style="color:#6B625B;">Total Matches Draw:<span style="color:#EE4B29;">&nbsp;{{matchdraw}}</span></h3>
+    </div>
+        </div>
+    </div>
