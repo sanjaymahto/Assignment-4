@@ -18,9 +18,10 @@
                 <th colspan="7" style="text-align:center;">{{match.name}}</th>
                 </hr>
                 <p style="color:black;text-align:center;"><input style="color:black;text-align:center;" type="text" placeholder="Date of Match" ng-model="Date">&nbsp;<input style="color:black;text-align:center;" type="text" placeholder="Team Name or Code" ng-model="teamName"></p>
-                <br/>
+                 <p align="center">OR</p>
+                <P style="color:white;text-align:center;">Click on any <em>Match Date</em> to know the details of a <em>Single Match</em></P>
                 <tr ng-repeat="innermatch in match.matches | filter:{date:Date} | filter:teamName ">
-                    <td data-title="'Date'">{{innermatch.date}}</td>
+                    <td ng-click="myFunction(innermatch.date,innermatch.team1.name,innermatch.team2.name)" data-title="'Date'" data-toggle="modal" data-target="#myModal">{{innermatch.date}}</td>
                     <td data-title="'Team 1 Name'"> {{innermatch.team1.name}}</td>
                     <td data-title="'Team 1 Code'"> {{innermatch.team1.code}}</td>
                     <td data-title="'Team 1 Score'">{{innermatch.score1}}</td>
@@ -31,3 +32,33 @@
             </table>
         </div>
     </div>
+
+    <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 style="color:black" align="center">Single Match Details</h3>
+        <h4 class="modal-title" style="color:black" align="center">{{matchDay}}</h4>
+      </div>
+      <div class="modal-body">
+        <p style="color:black">Match Date: {{date}}</p>
+        <p style="color:black">Team 1: {{teamname1}}</p>
+        <p style="color:black">Team 2: {{teamname2}}</p>
+        <p style="color:black">Score made By Team 1: {{score1}}</p>
+        <p style="color:black">Score made by Team 2: {{score2}}</p>
+        <p style="color:black">Winning Team :{{win}}</p>
+        <p style="color:black">Losing Team:{{lost}}</p>
+        <p style="color:black">{{draw}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
